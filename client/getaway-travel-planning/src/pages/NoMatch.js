@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import lostQuote from "./img/ls.png"
+import lostQuote from "./img/ls.jpg"
 
 function NoMatch() {
   return (

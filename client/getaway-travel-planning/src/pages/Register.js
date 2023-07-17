@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/Carousel/FormModal";
 import { Container, Row, Col } from 'react-bootstrap';
 import CreateUser from "../components/RegisterForm";
 
