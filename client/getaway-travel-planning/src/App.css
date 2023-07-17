@@ -1,0 +1,28 @@
+.btn {
+  font-family: 'Jaldi', sans-serif;
+  font-size: 18px;
+}
+
+.default {
+  cursor: default;
+}
+
+.row, .form-group {
+  font-family: 'Jaldi', sans-serif;
+  font-size: 22px;
+}
+
+.row h1 {
+  font-family: 'Signika', sans-serif;
+}
+
+#profile {
+  background: url(./pages/img/pf.jpeg)no-repeat center center fixed;
+  background-size: cover;
+}
+
+.text-profile, #calendar-profile{
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  cursor: default;
+}
