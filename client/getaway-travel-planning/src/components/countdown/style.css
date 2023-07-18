@@ -1,0 +1,10 @@
+.countdown {
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Jaldi', sans-serif;
+}
+
+.clockDays, .clockHours, .clockMinutes, .clockSeconds {
+    display: inline;
+    margin: 10px;
+}
