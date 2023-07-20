@@ -10,19 +10,19 @@ const mongoose = require("mongoose");
 const passport = require('passport');
 const path = require('path');
 const cors = require('cors');
-const Chatkit = require('@pusher/chatkit-server');
+//const Chatkit = require('@pusher/chatkit-server');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const chatInstanceLocator = process.env.REACT_APP_CHAT_INSTANCE_LOCATOR;
-const chatKey = process.env.CHAT_KEY;
+//const chatInstanceLocator = process.env.REACT_APP_CHAT_INSTANCE_LOCATOR;
+//const chatKey = process.env.CHAT_KEY;
 
 // Chatkit credentials
-const chatkit = new Chatkit.default({
-  instanceLocator: chatInstanceLocator,
-  key: chatKey,
-});
+//const chatkit = new Chatkit.default({
+//   instanceLocator: chatInstanceLocator,
+//   key: chatKey,
+// });
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -77,27 +77,27 @@ app.use((req, res, next) => {
 
 // Chatkit post users and authenticate code goes from here >>>>>>>>>
 
-app.post('/users', (req, res) => {
-  const { username } = req.body
-  chatkit
-    .createUser({
-      id: username,
-      name: username
-    })
-    .then(() => res.sendStatus(201))
-    .catch(error => {
-      if (error.error === 'services/chatkit/user_already_exists') {
-        res.sendStatus(200)
-      } else {
-        res.status(error.status).json(error)
-      }
-    })
-});
+// app.post('/users', (req, res) => {
+//   const { username } = req.body
+//   chatkit
+//     .createUser({
+//       id: username,
+//       name: username
+//     })
+//     .then(() => res.sendStatus(201))
+//     .catch(error => {
+//       if (error.error === 'services/chatkit/user_already_exists') {
+//         res.sendStatus(200)
+//       } else {
+//         res.status(error.status).json(error)
+//       }
+//     })
+// });
 
-app.post('/authenticate', (req, res) => {
-  const authData = chatkit.authenticate({ userId: req.query.user_id });
-  res.status(authData.status).send(authData.body);
-});
+// app.post('/authenticate', (req, res) => {
+//   const authData = chatkit.authenticate({ userId: req.query.user_id });
+//   res.status(authData.status).send(authData.body);
+// });
 // <<<<<<<<to here
 
 // Routes

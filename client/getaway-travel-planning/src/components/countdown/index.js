@@ -6,7 +6,7 @@ class Countdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      deadline: "February 29,2020",
+      deadline: "February 29,2025",
       newDeadline: ""
     };
   }
